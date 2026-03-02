@@ -1,0 +1,22 @@
+/* components/ProgressBar.module.css */
+.barfiller {
+    width: 100%;
+    height: 4px;
+    position: relative;
+    margin-bottom: 25px;
+    margin-top: 12px;
+    border-radius: 5px;
+    /* filter: drop-shadow(0px 10px 10px rgba(60, 115, 206, 0.2)); */
+    /* background-color: #fff; */
+}
+
+/* .fill {
+    background: #333;
+} */
+
+span.fill {
+    background: #f6881f !important;
+    border-radius: 5px;
+}
+
+

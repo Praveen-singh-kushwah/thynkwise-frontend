@@ -1,0 +1,101 @@
+.feature-area {
+  background: #fff;
+  padding: 0 0 80px;
+}
+
+.style-two.feature-area {
+  /* background: url(/assets/images/resource/why-choose-bg.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 95px 0 100px;
+}
+
+.consen-section-title h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.consen-section-title span {
+  color: #f6881f;
+}
+
+.consen-section-title p {
+  opacity: 70%;
+  padding: 13px 0 0;
+}
+
+/*style two*/
+.consen-section-title h2 {
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: #f6881f;
+  margin: 0 0 16px;
+  position: relative;
+  margin-left: 53px;
+  display: inline-block;
+}
+
+.consen-section-title h2:before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: -53px;
+  height: 2px;
+  width: 41px;
+  background: #f6881f;
+}
+
+.feature-area p.about-text1 {
+  opacity: inherit;
+  padding: 16px 0 0;
+}
+
+.feature-area ul.tabs-inner-list li svg {
+  display: inline-block;
+  margin-right: 12px;
+  color: #f6881f;
+  font-size: 15px;
+}
+
+.dreamit-icon-list ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 14px 0 0px;
+}
+
+.dreamit-icon-list ul li svg {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #f6881f;
+  display: inline-block;
+  color: #fff;
+  font-size: 11px;
+  margin-right: 10px;
+}
+
+.dreamit-icon-list ul li span {
+  color: #686868
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .style-two.feature-area {
+    padding: 45px 0 40px;
+  }
+
+  .consen-section-title h5 {
+    font-size: 16px;
+    margin: 35px 0 20px;
+    text-align: center;
+  }
+  .consen-section-title h2 {
+    font-size: 21px;
+}
+.consen-section-title p {
+  font-size: 14px;
+}
+}

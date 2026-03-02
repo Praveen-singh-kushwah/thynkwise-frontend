@@ -1,0 +1,13 @@
+.consen-section-title h2 {
+    font-size: 36px;
+    margin: 0;
+}
+.border-bottom-custom {
+    border-bottom: 2px solid #f6881f;
+  }
+  .section11{
+    background-position: center;
+    padding: 95px 0 70px;
+    /* background: url(/assets/images/bg/4.jpg); */
+    background-size: cover;
+  }

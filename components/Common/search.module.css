@@ -1,0 +1,38 @@
+.edu-search-box {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .edu-search-box input {
+    height: 60px;
+    background: var(--color-shade);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-body);
+    padding: 0 25px;
+    min-width: 350px;
+    border: 0 none;
+    border-radius: 5px;
+    padding-right: 48px;
+  }
+  
+  @media only screen and (max-width: 479px) {
+    .edu-search-box input {
+      min-width: 100%;
+    }
+  }
+  
+  .edu-search-box .search-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    padding: 0;
+    border: 0 none;
+    background: transparent;
+  }
+  
+  .edu-search-box .search-button svg {
+    font-size: 17px;
+  }
+  

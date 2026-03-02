@@ -1,0 +1,231 @@
+.custom-table {
+    padding: 95px 0 70px;
+    /* background: url(/assets/images/bg/1.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contact_from_box {
+    padding: 27px 25px 45px;
+}
+
+.form_box input {
+    width: 100%;
+    height: 50px;
+    padding-left: 25px;
+    background: #f7f4f4;
+    border-radius: 30px;
+    color: #232323;
+    border: 1px solid rgba(35, 35, 35, 0.12);
+    transition: .5s;
+}
+
+.form_box textarea {
+    width: 100%;
+    background: #f7f4f4;
+    padding-left: 25px;
+    padding-top: 20px;
+    height: 135px;
+    border: 1px solid rgba(35, 35, 35, 0.12);
+    border-radius: 30px;
+    color: #232323;
+    transition: .5s;
+}
+
+.form_box input::placeholder {
+    color: #6d6d6d;
+}
+
+.form_box input:focus,
+.form_box textarea:focus {
+    border-color: #f6881f;
+    outline: 0;
+    box-shadow: 0 0 6px rgba(204, 143, 0, 0.6);
+}
+
+.quote_button button {
+    padding: 13px 15px;
+    background: #10102E;
+    display: block;
+    color: #fff;
+    border-radius: 30px;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    transition: .5s;
+}
+
+.quote_button button i {
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    color: #f6881f;
+    transition: .5s;
+}
+
+.quote_button button:hover {
+    color: #fff;
+    background: #f6881f;
+}
+
+.quote_button button:hover i {
+    color: #fff;
+}
+
+.sticky-widget {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 170px;
+}
+
+.header-button {
+    display: inline-block;
+    padding-left: 32px;
+}
+
+.header-button button {
+    padding: 12px 20px;
+    color: #fff;
+    background: #f6881f;
+    border-radius: 30px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: .5s;
+    border: 1px solid #f6881f;
+    font-size: 16px;
+}
+
+.header-button button:before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    background: #10102E;
+    transform: scale(0);
+    transition: .5s;
+}
+
+.header-button button:hover:before {
+    transform: scale(1);
+}
+.header-button a {
+    padding: 12px 15px 12px 0px;
+    color: #fff;
+    background: #f6881f;
+    border-radius: 30px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: .5s;
+    border: 1px solid #f6881f;
+    font-size: 16px;
+}
+
+.header-button a:before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    background: #10102E;
+    transform: scale(0);
+    transition: .5s;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.header-button a:hover:before {
+    transform: scale(1);
+}
+.footer-button {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 15px 15px;
+    background: #fb8a42;
+    border-radius: 0.5em;
+    border: 0px;
+}
+
+.footer-button:hover {
+    background: #fb8a42;
+}
+
+/* Apply the animations to the button */
+.animateButton {
+    /* Apply shrinkExpand and blink animations */
+    animation: shrinkExpand 2s ease-in-out infinite;
+    -webkit-animation: shrinkExpand 1s ease-in-out infinite;
+    font-size: 20px;
+  }
+  
+  /* ShrinkExpand Keyframes for Standard Browsers */
+  @keyframes shrinkExpand {
+    0% {
+      transform: scale(1);
+    }
+  
+    25% {
+      transform: scale(0.9);
+      /* Shrink */
+    }
+  
+    50% {
+      transform: scale(1.1);
+      /* Expand */
+    }
+  
+    100% {
+      transform: scale(1);
+      /* Back to normal */
+    }
+  }
+  
+  /* ShrinkExpand Keyframes for WebKit Browsers */
+  @-webkit-keyframes shrinkExpand {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    25% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+      /* Shrink */
+    }
+  
+    50% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      /* Expand */
+    }
+  
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      /* Back to normal */
+    }
+  }
+  
+  /* Blink Keyframes for Standard Browsers */
+  
+  .btnlabel{
+    background-color: #6d6d6d;
+    padding: 13px;
+    border-radius: 50px;
+    margin-right: 5px;
+  }

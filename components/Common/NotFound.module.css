@@ -1,0 +1,58 @@
+.error-thumb {
+  text-align: center;
+}
+
+.error-content {
+  text-align: center;
+}
+
+.error-content h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.error-content h2 span {
+  color: #f6881f;
+}
+
+
+.error-button a {
+  padding: 14px 40px 14px 40px;
+  font-weight: 500;
+  color: #fff;
+  background: #f6881f;
+  display: inline-block;
+  border-radius: 30px;
+  border: 1px solid #f6881f;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.error-button a svg {
+  margin-right: 5px;
+}
+
+.error-button a:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background: #10102E;
+  border-radius: 30px;
+  transition: .5s;
+}
+
+.error-button a:hover {
+  border-color: #10102E;
+}
+
+.error-button a:hover:before {
+  width: 100%;
+  left: 0;
+}

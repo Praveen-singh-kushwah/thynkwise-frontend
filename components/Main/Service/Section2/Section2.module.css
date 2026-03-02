@@ -1,0 +1,299 @@
+
+
+.about-area .dreamit-about-thumb {
+  margin: 0px 0 0 -128px;
+  position: relative;
+  z-index: 1;
+}
+
+.style-three.about-area {
+  background: #fff;
+  padding: 0px 0 82px;
+}
+
+/*upper style*/
+.upper.style-three.about-area {
+  padding: 90px 0 90px;
+}
+
+.style-three.about-area .dreamit-about-thumb {
+  margin: 0px 0 0 -72px;
+}
+
+.style-three .dreamit-icon-list ul li {
+  padding: 12px 0 0px;
+}
+
+.style-three .dreamit-icon-list ul li span {
+  color: #232323;
+}
+
+.style-three .dreamit-icon-list ul li svg {
+  width: inherit;
+  height: inherit;
+  line-height: inherit;
+  border-radius: 0;
+  background-color: inherit;
+  display: inline-block;
+  color: #f6881f;
+  font-size: 22px;
+  margin-right: 8px;
+  position: relative;
+  top: 4px;
+}
+
+/*about syle two*/
+.style-three .about-button a {
+  padding: 14px 20px;
+  font-weight: 500;
+  color: #fff;
+  background: #f6881f;
+  display: inline-block;
+  border-radius: 30px;
+  border: 1px solid #f6881f;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin-top: 31px;
+  font-size: 16px;
+}
+
+
+
+.style-three .about-button a:hover {
+  color: #f6881f;
+}
+
+
+
+.style-three.about-area .dreamit-about-thumb {
+  margin: 0px 0 0 -72px;
+}
+
+.style-three .about-shape-thumb1 {
+  position: absolute;
+  left: -191px;
+  bottom: -98px;
+  z-index: 1;
+  display: none;
+}
+
+.style-three .about-shape-thumb3 {
+  position: absolute;
+  right: 37px;
+  top: -4px;
+  z-index: -1;
+}
+
+.consen-section-title h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.consen-section-title span {
+  color: #f6881f;
+}
+
+.consen-section-title p {
+  opacity: 70%;
+  padding: 13px 0 0;
+}
+
+/*style two*/
+.consen-section-title h5 {
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: #f6881f;
+  margin: 0 0 16px;
+  position: relative;
+  margin-left: 53px;
+  display: inline-block;
+}
+
+.consen-section-title h5:before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: -53px;
+  height: 2px;
+  width: 41px;
+  background: #f6881f;
+}
+
+/*center before after*/
+.upper.consen-section-title h5 {
+  left: 0px;
+  margin-left: 0;
+}
+
+.upper.consen-section-title h5::before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: -55px;
+  margin: auto;
+  height: 2px;
+  width: 41px;
+  background: #f6881f;
+}
+
+.upper.consen-section-title h5:after {
+  position: absolute;
+  content: "";
+  top: 10px;
+  right: -55px;
+  margin: auto;
+  height: 2px;
+  width: 41px;
+  background: #f6881f;
+}
+
+
+.upper p.about-text1 {
+  opacity: inherit;
+  padding: 16px 0 0;
+}
+
+
+.about-button a {
+  padding: 9px 14px 14px 14px;
+  font-weight: 500;
+  color: #fff;
+  background: #f6881f;
+  display: inline-block;
+  border-radius: 30px;
+  border: 1px solid #f6881f;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin-top: 38px;
+}
+
+.about-button a:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background: #fff;
+  border-radius: 30px;
+  transition: .5s;
+}
+
+.about-button a svg {
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  line-height: 32px;
+  border-radius: 25px;
+  text-align: center;
+  background: #fff;
+  color: #f6881f;
+  display: inline-block;
+  margin-left: 14px;
+  position: relative;
+  top: 3px;
+  transition: .5s;
+}
+
+.about-button a:hover {
+  color: #f6881f;
+}
+
+.about-button a:hover:before {
+  width: 100%;
+  left: 0;
+}
+
+.about-button a:hover svg {
+  background: #f6881f;
+  color: #fff;
+}
+
+
+/* components/ProgressBar.module.css */
+.progressContainer {
+  position: relative;
+  width: 60px; /* Adjust the size to 60px */
+  height: 60px; /* Adjust the size to 40px */
+  margin: 20px; /* Add margin for spacing */
+  display: inline-block;
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+}
+
+.progressText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px; /* Adjust font size as needed */
+  font-weight: bold;
+  color: #f6881f; /* Same as the stroke color */
+}
+
+.circle-progress-title h4 {
+  font-size: 18px;
+  line-height: 28px;
+  color: #232323;
+  font-weight: 500;
+  position: relative;
+ 
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .upper.style-three.about-area {
+    padding: 0 0 70px;
+}
+.style-three.about-area .dreamit-about-thumb {
+  margin: 0;
+}
+.dreamit-about-thumb img {
+  width: 100%;
+}
+.style-three .about-shape-thumb1 {
+  position: absolute;
+  left: -71px;
+  bottom: -7px;
+  z-index: 1;
+}
+.about-shape-thumb1 img {
+  width: 35%;
+}
+.dreamit-about-thumb img {
+  width: 100%;
+}
+.consen-section-title h5 {
+  font-size: 16px;
+}
+.style-three.about-area .consen-section-title h2 {
+  text-align: left;
+}
+.consen-section-title h2 {
+  font-size: 21px;
+}
+.style-three.about-area .consen-section-title p {
+  font-size: 14px;
+  text-align: left;
+}
+.style-three .dreamit-icon-list ul li svg {
+  float: left;
+}
+.dreamit-icon-list ul li span {
+  font-size: 14px;
+}
+.style-three.about-area .about-button {
+  text-align: center;
+}
+.circle-progress-title h4 {
+  font-size: 14px;
+ 
+}
+}

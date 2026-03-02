@@ -1,0 +1,233 @@
+.skill-area {
+  /* background: url(/assets/images/resource/skill-bg.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0 100px;
+}
+
+.consen-section-title h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.consen-section-title span {
+  color: #f6881f;
+}
+
+.consen-section-title p {
+  opacity: 70%;
+  padding: 13px 0 0;
+}
+
+/*style two*/
+.consen-section-title h5 {
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: #f6881f;
+  margin: 0 0 16px;
+  position: relative;
+  margin-left: 53px;
+  display: inline-block;
+}
+
+.consen-section-title h5:before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: -53px;
+  height: 2px;
+  width: 41px;
+  background: #f6881f;
+}
+
+/*center before after*/
+.upper.consen-section-title h5 {
+  left: 0px;
+  margin-left: 0;
+}
+
+.upper.consen-section-title h5::before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: -55px;
+  margin: auto;
+  height: 2px;
+  width: 41px;
+  background: #f6881f;
+}
+
+.upper.consen-section-title h5:after {
+  position: absolute;
+  content: "";
+  top: 10px;
+  right: -55px;
+  margin: auto;
+  height: 2px;
+  width: 41px;
+  background: #f6881f;
+}
+
+.dreamit-smart-title h4 {
+  font-size: 22px;
+  font-weight: 500;
+  padding: 4px 0 14px;
+}
+
+.dreamit-smart-title span {
+  color: #f6881f;
+}
+
+.skill-area p.slill-text {
+  padding: 12px 0 0;
+  color: #fff;
+  opacity: 67%;
+}
+
+.slill-single-thumb {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-thumb-content {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  /* background-color: rgba(255, 60, 0, 0.74556944); */
+  background-color: #f6871fa7;
+  padding: 26px 35px 28px 30px;
+  border-radius: 0px 319px 0 0;
+}
+
+.skill-title h3 {
+  font-size: 60px;
+  color: #fff;
+  display: inline-block;
+}
+
+.skill-title span {
+  font-size: 60px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.skill-title h5 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin-top: 6px;
+}
+
+.skill-shape img {
+  position: absolute;
+  left: 240px;
+  bottom: 120px;
+}
+
+.skill-shape1.bounce-animate2 {
+  position: absolute;
+  right: -10%;
+  top: -45%;
+}
+
+.dance {
+  -webkit-animation: dance 2s alternate infinite;
+  animation: dance 2s alternate infinite;
+}
+
+@keyframes dance {
+  0% {
+    -webkit-transform: scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1.2);
+  }
+}
+
+.bounce-animate2 {
+  animation-name: float-bob2;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -moz-animation-name: float-bob2;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: float-bob2;
+  -ms-animation-duration: 3s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-animation-name: float-bob2;
+  -o-animation-duration: 3s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .slill-single-thumb img {
+    width: 100%;
+  }
+
+  .consen-section-title h2 {
+    font-size: 21px;
+  }
+
+  .dreamit-smart-title p {
+    font-size: 14px;
+  }
+
+  .skill-thumb-content {
+    left: 0;
+  }
+
+  .skill-title h3 {
+    font-size: 35px;
+    font-weight: 600;
+  }
+
+  .skill-title span {
+    font-size: 38px;
+  }
+
+  .skill-title h5 {
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .slill-single-thumb.pl-50 {
+    padding-left: 0 !important;
+}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .slill-single-thumb img {
+      width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .slill-single-thumb {
+      padding-left: 51px !important;
+  }
+  .slill-single-thumb img {
+    width: 130%;
+}
+.skill-thumb-content {
+  left: 30px;
+}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px) {
+  .slill-single-thumb.pl-50 {
+      padding-left: 0 !important;
+      margin-top: 30px;
+      overflow: hidden;
+  }
+}
+
+.prossess-ber-plugin .title  {
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+}

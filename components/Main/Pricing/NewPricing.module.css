@@ -1,0 +1,293 @@
+.custom-table {
+    padding: 20px 0 0px;
+    /* background: url(/assets/images/bg/1.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pricing-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.pricing-card::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: #3959a8;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.prime-card {
+    background-color: antiquewhite; /* Background for Prime */
+    border-color: #d4af37; /* Optional: border for Prime */
+  }
+  
+  .prime-card::before {
+    background-color: #d4af37; /* Before color for Prime */
+  }
+.pricing-card .card-header {
+    background-color: transparent;
+    color: #f6881f;
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+.pricing-card .price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.holiday-offer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+}
+
+/* Ribbon text */
+.holiday-offer span {
+    position: absolute;
+    display: block;
+    width: 160px;
+    top: 20px;
+    right: -45px;
+    padding: 6px 0;
+    background: #f6881f;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    transform: rotate(45deg);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.holiday-offer::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: -45px;
+    width: 160px;
+    padding: 6px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background: #f6881f;
+    transform: rotate(45deg);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.custom-tab-container {
+    border: 2px solid #f6881f;
+    padding: 10px;
+    display: inline-flex;
+    border-radius: 8px;
+}
+
+.custom-tab-container .nav-link {
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #333 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    margin: 0 5px;
+}
+
+.custom-tab-container .nav-link.active-tab {
+    background-color: #f6881f;
+    color: #fff !important;
+    /* border: 2px solid white; */
+}
+
+.custom-tab-container .nav-link.inactive-tab {
+    background-color: #f5f5f5;
+    color: #333 !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+    -moz-transition: background-color 0.3s ease, color 0.3s ease;
+    -ms-transition: background-color 0.3s ease, color 0.3s ease;
+    -o-transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-tab-container .nav-link:hover {
+    background-color: #f6881f;
+    color: #fff !important;
+    /* border: 2px solid white; */
+}
+
+.tab-sub-label {
+    font-size: 0.7rem;
+    font-weight: normal;
+    margin-top: 2px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.sub-orange {
+    background-color: #fff;
+    color: #f6881f;
+    border: 1px solid #f6881f;
+}
+
+.sub-purple {
+    background-color: #d8b4fe;
+    color: #4b0082;
+}
+
+.sub-gray {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.sub-green {
+    background-color: #aaf0d1;
+    color: #006400;
+}
+
+.see-more-button {
+    color: #f6881f;
+    border: none;
+    background: none;
+}
+
+.react-icon {
+    font-size: 1rem;
+}
+
+.pricing-card ul li .react-icon {
+    font-size: 1rem;
+}
+
+.toggle-button {
+    font-size: 0.9rem;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.always-visible-section {
+    margin-bottom: 1.5rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.plan-title {
+    text-align: left;
+    color: #f6881f;
+}
+
+.plan-subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.plan-execution-fee {
+    color: #f6881f;
+    font-size: 16px;
+}
+
+.discount {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #777;
+    margin-left: 5px;
+}
+
+.footer-button {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 15px 15px;
+    background: #fb8a42;
+    border-radius: 0.5em;
+    border: 0px;
+}
+
+.footer-button:hover {
+    background: #fb8a42;
+}
+
+.btn-drop {
+    color: #fb8a42;
+}
+
+.strike-through {
+    text-decoration: line-through;
+}
+
+.textWithBorder {
+    position: relative;
+}
+
+.textWithBorder::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.textWithBorder::after {
+    bottom: -10px;
+}
+
+.cursor-pointer {
+    border: 1px solid #fb8a42;
+    color: #fb8a42;
+    padding: 5px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.execution-label {
+    font-size: 17px;
+    color: #333;
+    /* Adjust as per your design */
+}
+
+.execution-price {
+    color: #fb8a42;
+    /* font-size: 25px;
+    font-weight: bold; */
+}
+
+.execution-period {
+    font-size: 14px;
+}
+
+.execution-discount {
+    font-size: 10px;
+}
+
+.smart-description {
+    min-height: 60px;
+}
+
+.main-description {
+    max-width: 700px;
+    text-align: center;
+}

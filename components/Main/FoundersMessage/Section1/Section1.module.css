@@ -1,0 +1,453 @@
+.slider-area {
+    /* background: url(/assets/images/bg/1.jpg); */
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    height: 500px;
+    z-index: 1;
+    position: relative;
+}
+
+.slider2 {
+    background: url(/assets/images/slider/hero-bg2.jpg);
+    background-size: cover;
+    background-position: 35%;
+    background-repeat: no-repeat;
+    height: 890px;
+    z-index: 1;
+    position: relative;
+}
+
+/*slider content*/
+.slider-content h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    /* padding: 0 0 10px 56px; */
+    position: relative;
+    z-index: 1;
+}
+
+/* .slider-content h3:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 10px;
+    width: 40px;
+    height: 2px;
+    background: #f6881f;
+} */
+
+.slider-content h1 {
+    font-size: 58px;
+    color: #fff;
+    line-height: 1;
+}
+
+.slider-content span {
+    color: #f6881f;
+}
+
+.slider-content p {
+    font-size: 17px;
+    color: #000000;
+    margin-top: 30px;
+    width: 90%;
+}
+
+/* .slider-thumb img {
+    filter: brightness(.5);
+} */
+
+@media screen and (min-width:992px) {
+    .slider-thumb {
+        padding-left: 3rem;
+    }
+}
+
+/*slider button*/
+.slider-button a {
+    padding: 16px 20px 16px 20px;
+    font-weight: 500;
+    color: #fff;
+    background: #f6881f;
+    display: inline-block;
+    border-radius: 30px;
+    border: 1px solid #f6881f;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.slider-button a:before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background: #fff;
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.slider-button a svg {
+    width: 20px;
+    height: 20px;
+    line-height: 32px;
+    border-radius: 25px;
+    text-align: center;
+    background: #fff;
+    color: #f6881f;
+    display: inline-block;
+    margin-left: 14px;
+    position: relative;
+    top: 3px;
+    transition: .5s;
+}
+
+.slider-button a:hover {
+    color: #f6881f;
+}
+
+.slider-button a:hover:before {
+    width: 100%;
+    left: 0;
+}
+
+.slider-button a:hover svg {
+    background: #f6881f;
+    color: #fff;
+}
+
+/*slider contact*/
+
+.banner-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.slider-contact-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    width: 60px;
+}
+
+.contact-icon img {
+    max-width: 100%;
+}
+
+.contact-number {
+    flex: 1;
+}
+
+.contact-number span {
+    color: #858B97;
+}
+
+.contact-number h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 5px;
+}
+
+.contact-number h3 a {
+    color: inherit;
+}
+
+/*video button*/
+.video-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 3px dashed #fff;
+    border-radius: 50%;
+    padding: 7px;
+    transform: translate(-50%, -50%);
+}
+
+.video-icon a {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 50%;
+    color: #FF3B00;
+    background: #fff;
+    display: inline-block;
+    font-size: 26px;
+}
+
+.style-two.video-icon {
+    position: absolute;
+    top: 80px;
+    right: 13px;
+    left: inherit;
+    border: 0;
+    border-radius: 50%;
+    padding: 7px;
+    transition: .5s;
+    opacity: 0;
+}
+
+.style-two.video-icon a {
+    width: 48px;
+    height: 48px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #ff3c00;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.case-study-thumb:hover .style-two.video-icon {
+    top: 60px;
+    opacity: 1;
+}
+
+/*video*/
+.style-three .upp.style-two.video-icon {
+    position: absolute;
+    top: 40px;
+    right: 169px;
+    left: inherit;
+    border: 0;
+    border-radius: 50%;
+    padding: 7px;
+    transition: .5s;
+    opacity: 1;
+}
+
+.style-three .upp.style-two.style-two.video-icon a {
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #ff3c00;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/*slider shape*/
+.slider-shape-thumb {
+    position: absolute;
+    left: -30px;
+    top: 0;
+    animation: moveLeftBounce 4s linear infinite;
+    z-index: -1;
+    opacity: .3;
+}
+
+.slider-shape-thumb2 {
+    position: absolute;
+    left: -110px;
+    top: 0;
+    animation: moveLeftBounce 3s linear infinite;
+    z-index: -1;
+    opacity: .5;
+    -webkit-animation: moveLeftBounce 3s linear infinite;
+}
+
+/***slider two***/
+
+/*slider content*/
+.slider2 .slider-content h1 {
+    font-size: 66px;
+}
+
+.slider2 .slider-content p {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    max-inline-size: 40ch;
+    line-height: 30px;
+    position: relative;
+    z-index: 1;
+    border-left: 3px solid #ff3c00;
+    padding-left: 1rem;
+}
+
+/*slider button2*/
+.slider2 .slider-button a {
+    padding: 13px 40px;
+    display: inline-block;
+}
+
+.slider2 .slider-button a svg {
+    font-size: 20px;
+    margin-left: 0px;
+    margin-right: 6px;
+    width: inherit;
+    height: inherit;
+    background: inherit;
+    color: #fff;
+    transition: .5s;
+}
+
+.slider2 .slider-button a:hover svg {
+    background: #fff;
+    color: #f6881f;
+}
+
+/*slider shape*/
+.slider-shape-thumb3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.slider-shape-thumb4 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    animation: moveLeftBounce 3s linear infinite;
+    -webkit-animation: moveLeftBounce 3s linear infinite;
+}
+
+@keyframes moveLeftBounce {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    50% {
+        -webkit-transform: translateX(30px);
+        transform: translateX(30px);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.slider-shape-thumb5 {
+    position: absolute;
+    left: 85px;
+    top: 310px;
+    z-index: -1;
+}
+
+.slider-shape-thumb6 {
+    position: absolute;
+    left: 40%;
+    top: 18%;
+}
+
+.slider-shape-thumb7 {
+    position: absolute;
+    left: 165px;
+    bottom: 101px;
+}
+
+.slider-shape-thumb8 {
+    position: absolute;
+    left: 46%;
+    top: 18%;
+}
+
+.slider-shape-thumb9 {
+    position: absolute;
+    left: 49%;
+    bottom: 7%;
+    z-index: -1;
+}
+
+.video-icon {
+    display: inline-block;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    .slider-content {
+        margin-top: 150px;
+    }
+
+    .slider-content h3 {
+        font-size: 15px;
+    }
+
+    .slider-content h1 {
+        font-size: 26px;
+    }
+
+    .slider-content p {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .slider-button {
+        float: inherit;
+    }
+
+    .contact-number {
+        display: none;
+    }
+
+    .contact-icon {
+        width: 56px;
+    }
+
+    .slider-thumb img {
+        width: 100% !important;
+        height: 50% !important;
+
+    }
+
+    .slider-thumb {
+        padding: 35px 0 0;
+        text-align: center;
+    }
+
+    .slider-area {
+        height: 715px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .slider-thumb img {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .slider-thumb img {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px) {
+    .slider-thumb {
+        padding: 35px 0 0;
+        text-align: center;
+    }
+
+    .slider-thumb img {
+        width: 80%;
+        height: 50%;
+    }
+
+    .slider-content {
+        margin-top: 130px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .slider-thumb {
+        padding-left: 2rem;
+    }
+}

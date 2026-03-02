@@ -1,0 +1,41 @@
+.service-area {
+  /* background: url(/assets/images/bg/2.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px 0 30px;
+}
+
+/* .mobile-center {
+  text-align: center;
+} */
+
+.quote-text {
+  font-size: 33px;
+  /* Default for Chrome, Edge, Safari, etc. */
+  color: #333;
+  font-weight: 400;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.highlight {
+  color: #f27a1a;
+  font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quote-text {
+    font-size: 20px;
+  }
+  .service-area {
+    padding: 50px 0 60px;
+  }
+}
+
+/* Firefox-specific font size */
+@-moz-document url-prefix() {
+  .quote-text {
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,226 @@
+.section-heading .sub-heading {
+    color: var(--rr-color-theme-primary) !important;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 992px) {
+    .section-heading .sub-heading {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .section-heading .sub-heading {
+        font-size: 12px;
+    }
+}
+
+/* .section-heading .sub-heading:before {
+      background: linear-gradient(270deg, rgba(63, 90, 243, 0.4) 0%, transparent 100%);
+      content: "";
+      width: 37px;
+      height: 10px;
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    } */
+.section-heading .sub-heading.active:before {
+    left: 0;
+    opacity: 1;
+}
+
+.section-heading .sub-heading.active:after {
+    right: 0;
+    opacity: 1;
+}
+
+.section-heading .sub-heading.after-none:after {
+    display: none;
+}
+
+.testi-carousel-wrap .testi-thumb-wrap {
+    max-width: 310px;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.testi-carousel-wrap .thumb-carousel .swiper-slide .testi-thumb {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid transparent;
+    cursor: pointer;
+}
+
+.testi-carousel-wrap .thumb-carousel .swiper-slide .testi-thumb.active-thumb {
+    border: 3px solid #f6881f;
+}
+
+.testi-carousel-wrap .content-carousel .testi-content {
+    max-width: 640px;
+}
+
+.testi-carousel-wrap .content-carousel .testi-content p {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.testi-carousel-wrap .content-carousel .testi-content .author-info .name {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.testi-carousel-wrap .content-carousel .testi-content .author-info span {
+    font-size: 14px;
+}
+
+.testi-img-5 {
+    max-width: 640px;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 992px) {
+    .testi-img-5 {
+        margin: 0 auto;
+        margin-top: 40px;
+        height: auto;
+    }
+}
+
+.testi-img-5 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    background-color: #000;
+    /* Example button color */
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+    /* Adjust spacing between buttons */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: #f6881f;
+    /* Hover effect color */
+}
+
+.video-name {
+    font-size: 26px;
+}
+
+.video-sub {
+    font-size: 20px;
+}
+
+.video-subtitle {
+    font-size: 18px;
+}
+
+.video-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.testimonial-section-5 {
+    background-position: center;
+    padding: 95px 0 90px;
+    /* background: url(/assets/images/bg/4.jpg); */
+    background-size: cover;
+}
+
+.team-social-media {
+    display: inline-block;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+.team-social-media a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #121b1d;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.team-social-media a:hover {
+    color: #ffb700;
+    background-color: #000000;
+}
+
+@media (max-width: 768px) {
+    .swiper-navigation {
+        flex-direction: row; /* Align buttons in a row */
+        position: static; /* Remove fixed positioning */
+        margin-top: 15px; /* Adjust spacing for mobile */
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 35px; /* Slightly smaller buttons for mobile */
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .swiper-navigation {
+        margin-top: 20px; /* Extra spacing for smaller screens */
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 30px; /* Even smaller buttons for very small screens */
+        height: 30px;
+        font-size: 14px;
+    }
+}
+
+.icon-color{
+    color: #f6881f;
+}

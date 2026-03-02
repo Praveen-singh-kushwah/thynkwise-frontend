@@ -1,0 +1,220 @@
+.team-area-about-inner {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: url(/assets/images/bg/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.team-area-about-inner .about-page-team-area-shep-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 991px) {
+    .team-area-about-inner {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}
+
+/* .team-area-about-inner .about-page-team {
+    margin-top: 70px;
+} */
+
+.team-inner {
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 991px) {
+    .team-inner.team-inner-about-page img {
+        margin: auto;
+    }
+
+    .team-inner.team-inner-about-page.team-inner-about-page-1,
+    .team-inner.team-inner-about-page.team-inner-about-page-2 {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .team-inner.team-inner-about-page.team-inner-about-page-3 {
+        margin-bottom: 30px;
+    }
+}
+
+.team-inner.team-inner-about-page .team-social-media .team-social-media-plus:hover {
+    background-color: #ffb700;
+    border-color: #000000;
+}
+
+.team-inner.team-inner-about-page .team-social-media .team-social-media-plus:hover span {
+    color: #000000;
+}
+
+.team-inner.team-inner-about-page .team-social-media ul li :hover svg {
+    color: #ffb700;
+}
+
+.team-inner.team-inner-about-page .team-name-position h6 a {
+    margin-top: 40px;
+    font-style: normal;
+    font-weight: 700;
+    color: #000000;
+    font-family: "Nunito", sans-serif;
+    margin-bottom: 0;
+    -webkit-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    display: block;
+}
+
+.team-inner.team-inner-about-page .team-name-position h6:hover a {
+    color: #ffb700;
+}
+
+.team-inner.team-inner-about-page .team-name-position span {
+    color: #000000;
+}
+
+.team-inner .team-social-media:hover ul {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 1;
+    visibility: visible;
+}
+
+.team-inner .team-social-media .team-social-media-plus {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #121B1D;
+    border: 3px solid #FFFFFF;
+    line-height: 45px;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    bottom: 78px;
+    right: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.team-inner .team-social-media .team-social-media-plus:hover {
+    background-color: #1954ED;
+}
+
+.team-inner .team-social-media .team-social-media-plus span a {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    color: #FFFFFF;
+    letter-spacing: -0.66px;
+}
+.team-inner .team-social-media .team-social-media-plus span a:hover{
+    color: #1954ED;
+}
+
+.team-inner .team-social-media ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #121B1D;
+    border-radius: 4px;
+    bottom: 150px;
+    position: absolute;
+    left: -182px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    list-style: none;
+}
+
+.team-inner .team-social-media ul li a:hover svg {
+    color: #1954ED;
+}
+
+.team-inner .team-social-media ul li a svg {
+    color: #FFFFFF;
+    -webkit-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    font-size: 25px;
+}
+
+.team-inner .team-name-position {
+    text-align: center;
+}
+
+.team-inner .team-name-position h6 a {
+    margin-top: 40px;
+    font-style: normal;
+    font-weight: 700;
+    color: #CCDEFF;
+    font-family: "Nunito", sans-serif;
+    margin-bottom: 0;
+    -webkit-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    display: block;
+}
+
+.team-inner .team-name-position h6:hover a {
+    color: #1954ED;
+}
+
+.team-inner .team-name-position {
+    color: #F0F0F0;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 11px;
+    display: block;
+}
+
+.font-size-1-22 {
+    font-size: 22px;
+}
+
+.font-size-1-16 {
+    font-size: 16px;
+}
+
+.consen-section-title h2 {
+    font-size: 36px;
+    margin: 0;
+}

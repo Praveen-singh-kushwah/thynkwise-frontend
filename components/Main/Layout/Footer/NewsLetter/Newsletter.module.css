@@ -1,0 +1,66 @@
+.subscribe-area {
+    background: url(/assets/images/resource/subscribe-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 48px 35px 40px;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .subscribe-title {
+    font-size: 34px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .subscribe_form .custom-form {
+    font-size: 14px;
+    height: 68px;
+    padding: 5px 25px;
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    border: 0;
+    margin-bottom: 14px;
+    border-radius: 35px;
+    padding-right: 150px;
+  }
+  
+  .subscribe_form .btn-custom {
+    transition: all 0.4s ease 0s;
+    border: medium none;
+    border-radius: 35px;
+    background: #f6881f;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    padding: 13px 30px;
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    display: inline-block;
+    z-index: 1;
+  }
+  
+  .subscribe_form .btn-custom:hover {
+    background: #11102F;
+    color: #fff;
+  }
+
+  .subscribe-thumb {
+    position: absolute;
+    left: 0;
+    top: 52px;
+  }
+  
+  .subscribe-thumb1 {
+    position: absolute;
+    right: 55px;
+    top: 21px;
+    animation: moveLeftBounce 3s linear infinite;
+  }
+
+  .subscribe_form {
+    position: relative;
+}

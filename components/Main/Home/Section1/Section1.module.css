@@ -1,0 +1,314 @@
+/* ===== Base Slider Styles ===== */
+.slider-area {
+  height: 750px;
+  z-index: 1;
+  position: relative;
+  will-change: transform;
+  
+}
+
+.slider2 {
+  background: url(/assets/images/slider/hero-bg2.jpg);
+  background-size: cover;
+  background-position: 35%;
+  background-repeat: no-repeat;
+  height: 890px;
+  z-index: 1;
+  position: relative;
+  will-change: transform;
+}
+
+/* ===== Slider Content ===== */
+.slider-content {
+  position: relative;
+  z-index: 2;
+}
+
+.slider-content h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  padding: 0 0 10px 56px;
+  position: relative;
+  font-display: swap;
+}
+
+.slider-content h3:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 10px;
+  width: 40px;
+  height: 2px;
+  background: #f6881f;
+}
+
+.slider-content h1 {
+  font-size: 58px;
+  color: #000000;
+  line-height: 1.2;
+  font-display: swap;
+  margin: 15px 0;
+}
+
+.slider-content span {
+  color: #f6881f;
+}
+
+.slider-content p {
+  font-size: 17px;
+  color: #1d1d1d;
+  margin-top: 30px;
+  width: 90%;
+  font-display: swap;
+  line-height: 1.6;
+}
+
+/* ===== Optimized Image Container ===== */
+.slider-thumb {
+  position: relative;
+  aspect-ratio: 451/459;
+  width: 100%;
+  min-height: 459px;
+}
+
+.slider-thumb img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ===== Slider Button ===== */
+.slider-button a {
+  padding: 16px 20px;
+  font-weight: 500;
+  color: #fff;
+  background: #f6881f;
+  display: inline-block;
+  border-radius: 30px;
+  border: 1px solid #f6881f;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.slider-button a:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background: #fff;
+  border-radius: 30px;
+  transition: width 0.5s ease;
+}
+
+.slider-button a svg {
+  width: 20px;
+  height: 20px;
+  line-height: 32px;
+  border-radius: 25px;
+  text-align: center;
+  background: #fff;
+  color: #f6881f;
+  display: inline-block;
+  margin-left: 14px;
+  position: relative;
+  top: 3px;
+  transition: all 0.5s ease;
+}
+
+.slider-button a:hover {
+  color: #f6881f;
+}
+
+.slider-button a:hover:before {
+  width: 100%;
+  left: 0;
+}
+
+.slider-button a:hover svg {
+  background: #f6881f;
+  color: #fff;
+}
+
+/* ===== Banner Buttons ===== */
+.banner-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+/* ===== Slider Shape Animations ===== */
+@keyframes moveLeftBounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+}
+
+.slider-shape-thumb {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  animation: moveLeftBounce 4s linear infinite;
+  z-index: -1;
+  opacity: 0.3;
+  will-change: transform;
+}
+
+.slider-shape-thumb2 {
+  position: absolute;
+  left: -110px;
+  top: 0;
+  animation: moveLeftBounce 3s linear infinite;
+  z-index: -1;
+  opacity: 0.5;
+  will-change: transform;
+}
+
+/* ===== Slider 2 Specific Styles ===== */
+.slider2 .slider-content h1 {
+  font-size: 66px;
+}
+
+.slider2 .slider-content p {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  max-inline-size: 40ch;
+  line-height: 30px;
+  position: relative;
+  z-index: 1;
+  border-left: 3px solid #ff3c00;
+  padding-left: 1rem;
+}
+
+.slider2 .slider-button a {
+  padding: 13px 40px;
+}
+
+.slider2 .slider-button a svg {
+  font-size: 20px;
+  margin-left: 0px;
+  margin-right: 6px;
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  color: #fff;
+}
+
+.slider2 .slider-button a:hover svg {
+  background: #fff;
+  color: #f6881f;
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 1199px) {
+  .slider-content h1 {
+    font-size: 48px;
+  }
+  
+  .slider2 .slider-content h1 {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 991px) {
+  .slider-area,
+  .slider2 {
+    height: auto;
+    padding: 100px 0;
+  }
+  
+  .slider-content {
+    margin-bottom: 40px;
+  }
+  
+  .slider-content h1 {
+    font-size: 42px;
+  }
+  
+  .slider2 .slider-content h1 {
+    font-size: 48px;
+  }
+  
+  .slider-thumb {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-content h1 {
+    font-size: 36px;
+  }
+  
+  .slider-content h3 {
+    font-size: 16px;
+    padding-left: 40px;
+  }
+  
+  .slider-content h3:before {
+    width: 30px;
+  }
+  
+  .slider-content p {
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .slider-thumb {
+    min-height: 350px;
+    margin-top: 30px;
+  }
+  
+  .banner-buttons {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .slider-content h1 {
+    font-size: 32px;
+  }
+  
+  .slider-content h3 {
+    font-size: 15px;
+    padding-left: 35px;
+  }
+  
+  .slider-thumb {
+    min-height: 300px;
+  }
+  
+  .slider-button a {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+  
+  .slider-button a svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+  }
+}
+
+/* ===== Accessibility Improvements ===== */
+@media (prefers-reduced-motion: reduce) {
+  .slider-shape-thumb,
+  .slider-shape-thumb2,
+  .slider-shape-thumb4 {
+    animation: none !important;
+  }
+  
+  .slider-button a,
+  .slider-button a svg {
+    transition: none !important;
+  }
+}

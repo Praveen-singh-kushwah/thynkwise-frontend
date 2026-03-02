@@ -1,0 +1,83 @@
+.breadcumb-area {
+  background: linear-gradient(rgba(19, 19, 35, 0.6), rgba(0, 0, 0, 0.5)), url(/assets/images/bg/pagebanner2.jpg) no-repeat center/cover;
+  height: 135px;
+  position: relative;
+}
+
+.breadcumb-content h1 {
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.breadcumb-content ul li {
+  color: #f6881f;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.breadcumb-content ul li a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  padding-right: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.breadcumb-content ul li a:before {
+  position: absolute;
+  content: "";
+  right: 5px;
+  top: 9px;
+  background: #fff;
+  width: 16px;
+  height: 2px;
+  transition: .5s;
+}
+
+.britcam-shape {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #f6881f;
+  width: 35%;
+  height: 53px;
+  padding: 15px 50px 0;
+  clip-path: polygon(6% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.upp.breadcumb-content ul li {
+  color: #fff;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .breadcumb-area {
+    text-align: center;
+  }
+
+  .britcam-shape {
+    display: none;
+  }
+
+  .breadcumb-area {
+    height: 200px;
+  }
+
+  .breadcumb-content h1 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+  .breadcumb-content{
+    margin-top: 80px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .britcam-shape {
+    width: 45%;
+  }
+}
