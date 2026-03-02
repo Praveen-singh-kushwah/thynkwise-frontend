@@ -1,5 +1,7 @@
 import { getBlogs } from "@/lib/BlogLib";
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
     const BASE_URL = process.env.SITE_URL || "https://www.thynkwise.co.in";
     const [blogs] = await Promise.all([getBlogs()]);

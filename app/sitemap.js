@@ -1,5 +1,7 @@
 import { getBlogs } from "@/lib/BlogLib";
 
+export const dynamic = "force-dynamic";
+
 export default async function sitemap() {
   const BASE_URL = process.env.SITE_URL;
   const [blogs] = await Promise.all([getBlogs()]);
