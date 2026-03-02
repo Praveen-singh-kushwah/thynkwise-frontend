@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { getTestimonial } from "@/lib/SuccessStoriesLib";
+import { getSuccessStoriesPage } from "@/lib/SuccessStoriesLib";
 import style from "./Testimonial.module.css";
 import TestimonialSwiper from "./TestimonialSwiper";
 export default async function Testimonial() {
   // const response = await getTestimonial({ type });
-  const response = await getTestimonial({  });
+  const response = await getSuccessStoriesPage();
   return (
     <>
       {response && (
@@ -25,7 +25,7 @@ export default async function Testimonial() {
                       ?
                     </h2>
                   </div>
-                  <TestimonialSwiper items={response} />
+                  <TestimonialSwiper items={response.testimonials} />
                 </div>
               </div>
               <div className="col-lg-6 col-md-12">
