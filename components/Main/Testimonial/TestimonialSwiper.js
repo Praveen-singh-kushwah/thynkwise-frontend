@@ -14,14 +14,14 @@ import style from "./Testimonial.module.css";
 import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa";
 
-const CMS_URL = process.env.NEXT_PUBLIC_CMS_URL || "http://localhost:1337";
+const CMS_URL = process.env.NEXT_PUBLIC_CMS_URL;
 
 export default function TestimonialSwiper({ items }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleSlideChange = (swiper) => {
-    setActiveIndex(swiper.realIndex);
+    setActiveIndex(swiper.realIndex);   
   };
 
   return (

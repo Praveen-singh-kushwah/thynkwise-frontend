@@ -1,4 +1,3 @@
-import { getTestimonial } from "@/lib/SuccessStoriesLib";
 import Image from "next/image";
 import style from "./Testimonial.module.css";
 
