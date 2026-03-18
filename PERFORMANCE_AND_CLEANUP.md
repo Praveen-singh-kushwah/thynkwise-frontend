@@ -4,7 +4,7 @@
 
 ### **Internal links used full URLs → full page reloads**
 
-All internal navigation used `process.env.SITE_URL + "/about-us"` (e.g. `http://127.0.0.1:3009/about-us`) in `<Link href={...}>`. In Next.js, **a full absolute URL is treated as external**, so the router does a **full page load** instead of client-side navigation. That means on every click:
+All internal navigation used `process.env.SITE_URL + "/about-us"` (e.g. `http://127.0.0.1:3010/about-us`) in `<Link href={...}>`. In Next.js, **a full absolute URL is treated as external**, so the router does a **full page load** instead of client-side navigation. That means on every click:
 
 - The whole document reloads
 - All layout JS/CSS run again
