@@ -9,6 +9,11 @@ const nextConfig = {
         pathname: "**",
       },
       {
+        protocol: "https",
+        hostname: "cms.thynkwise.co.in",
+        pathname: "**",
+      },
+      {
         protocol: "http",
         hostname: "localhost",
         pathname: "**",

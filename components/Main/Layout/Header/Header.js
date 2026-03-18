@@ -56,6 +56,9 @@ export default function Header() {
                     </ul>
                   </li>
                   {/* <Menu href={process.env.SITE_URL + "/assessment-framework"}>Assessment</Menu> */}
+                  <Menu href="/service">
+                        Services
+                      </Menu>
                   <Menu href="/blog">Blog</Menu>
                   <Menu href="/success-stories">
                     Success Stories
