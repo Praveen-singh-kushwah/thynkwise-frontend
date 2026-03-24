@@ -1,36 +1,61 @@
 import Pagebanner from "@/components/Common/Pagebanner";
-import PricingTable from "@/components/Main/Pricing/PricingTable";
-export function generateMetadata() {
+import NewPricing from "@/components/Main/Pricing/NewPricing";
+import { getPricingPage } from "@/lib/PricingPageLib";
+
+export async function generateMetadata() {
+  const pricingData = await getPricingPage();
+  const seo = pricingData?.seo;
+
+  const CMS =
+    process.env.NEXT_PUBLIC_CMS_URL || process.env.CMS_URL;
+
+  const ogImageUrl =
+    seo?.ogImage?.url
+      ? `${CMS}${seo.ogImage.url}`
+      : process.env.OG_IMAGE;
+
   return {
-    title: "thynkWISE Pricing | Flexible Plans for Every Need",
+    title: seo?.metaTitle || process.env.SITE_TITLE,
     description:
-      "Explore thynkWISE pricing plans tailored to fit your needs. Choose the perfect package for seamless collaboration and productivity.",
-    keywords:
-      "thynkWISE Pricing, thynkWISE Plans, Flexible Pricing, Affordable Collaboration Tools, Productivity Software Pricing, Team Collaboration Plans, thynkWISE Packages.",
+      seo?.metaDescription || process.env.SITE_DESCRIPTION,
+    keywords: seo?.keywords || process.env.SITE_KEYWORDS,
     openGraph: {
-      title: "Discover thynkWISE Pricing Plans",
+      title:
+        seo?.ogTitle ||
+        seo?.metaTitle ||
+        process.env.SITE_TITLE,
       description:
-        "Find the right thynkWISE plan for your team. Affordable, flexible, and designed to boost your productivity and collaboration.",
-      images: [
-        {
-          url: "/assets/images/seo-images/testimonial.png",
-          width: "1000",
-          height: "875",
-          alt: "thynkWISE Pricing | Flexible Plans for Every Need",
-        },
-      ],
+        seo?.ogDescription ||
+        seo?.metaDescription ||
+        process.env.SITE_DESCRIPTION,
+      type: "website",
+      images: ogImageUrl
+        ? [
+            {
+              url: ogImageUrl,
+              alt:
+                seo?.ogTitle ||
+                seo?.metaTitle ||
+                process.env.SITE_TITLE,
+            },
+          ]
+        : [],
     },
     alternates: {
       canonical: process.env.SITE_URL + "/pricing",
     },
   };
 }
-export default function page() {
+
+export default async function Page() {
+  const pricingData = await getPricingPage();
+
+  if (!pricingData) return null;
+
   return (
     <>
       <Pagebanner title={"Pricing"} />
-      <PricingTable />
-      {/* <NewPricing/> */}
+      <NewPricing data={pricingData} />
     </>
   );
 }

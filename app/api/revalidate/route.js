@@ -24,6 +24,12 @@ export async function POST(req) {
         revalidateTag("services-page");
     }
 
+    // Pricing page updated
+    if (model === "pricing-page") {
+        revalidatePath("/pricing");
+        revalidateTag("pricing-page");
+    }
+
     // blog post updated
     if (body.model === "blog-post") {
         revalidateTag("blog-posts");
