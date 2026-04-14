@@ -17,11 +17,11 @@ export default function middleware(req) {
     const isFullUrl = matchedRedirect.newSlug.startsWith('http');
     const newPageUrl = isFullUrl
       ? matchedRedirect.newSlug
-      : `${process.env.SITE_URL}/${matchedRedirect.newSlug.replace(/^\/+/, '')}`;
+      : new URL(`/${matchedRedirect.newSlug.replace(/^\/+/, '')}`, req.url);
 
     return NextResponse.redirect(
-      isFullUrl ? newPageUrl : new URL(newPageUrl, req.url),
-      301
+      newPageUrl,
+      307
     );
   }
 

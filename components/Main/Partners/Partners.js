@@ -13,8 +13,11 @@ export default function Partners({ partners }) {
           key={partner.id}
           className="col-xl-4 col-lg-6 col-md-6"
         >
-          <Link href={`/partners/${partner.slug}`} className="h-100 text-black">
-            <div className={"h-100 " + style["service-box-items-3"]}>
+          <div className={"h-100 " + style["service-box-items-3"]}>
+            <Link
+              href={`/partners/${partner.slug}`}
+              className="d-block h-100 text-black text-decoration-none"
+            >
               <div className={style["service-img"]}>
                 <Image
                   width={326}
@@ -38,20 +41,22 @@ export default function Partners({ partners }) {
                 <p className="text-justify">
                   {partner.desc}
                 </p>
-
-                {partner.websiteUrl && (
-                  <a
-                    href={partner.websiteUrl}
-                    target="_blank"
-                    onClick={(e) => e.stopPropagation()}
-                    className="link-btn"
-                  >
-                    Visit Site <FaArrowRight />
-                  </a>
-                )}
               </div>
-            </div>
-          </Link>
+            </Link>
+
+            {partner.websiteUrl && (
+              <div className={style["service-content"]}>
+                <a
+                  href={partner.websiteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="link-btn"
+                >
+                  Visit Site <FaArrowRight />
+                </a>
+              </div>
+            )}
+          </div>
         </div>
       ))}
     </div>

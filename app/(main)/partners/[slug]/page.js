@@ -12,15 +12,34 @@ export async function generateMetadata({ params }) {
     }
 
     const seo = partner.seo;
+    const siteUrl = (process.env.SITE_URL || "").replace(/\/$/, "");
+    const canonicalUrl =
+        seo?.canonicalUrl || `${siteUrl}/partners/${partner.slug}`;
+    const ogImageUrl = seo?.ogImage?.url
+        ? `${process.env.CMS_URL}${seo.ogImage.url}`
+        : null;
 
     return {
         title: seo?.metaTitle || partner.name,
         description: seo?.metaDescription || "",
+        keywords: seo?.keywords || "",
+
+        openGraph: {
+            title: seo?.ogTitle || seo?.metaTitle || partner.name,
+            description: seo?.ogDescription || seo?.metaDescription || "",
+            type: "website",
+            images: ogImageUrl
+                ? [
+                    {
+                        url: ogImageUrl,
+                        alt: seo?.ogTitle || seo?.metaTitle || partner.name,
+                    },
+                ]
+                : [],
+        },
 
         alternates: {
-            canonical:
-                seo?.canonicalUrl ||
-                process.env.SITE_URL + "/partners/" + partner.slug,
+            canonical: canonicalUrl,
         },
     };
 }
