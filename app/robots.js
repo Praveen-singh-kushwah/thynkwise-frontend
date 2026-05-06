@@ -1,10 +1,12 @@
 export default function robots() {
+  const baseUrl = (process.env.SITE_URL || "").replace(/\/$/, "");
+
   return {
     rules: {
       userAgent: "*",
-      disallow: ["/blogs/", "/resource", "/new-page", "https://backend.thynkwise.co.in"],
+      disallow: ["/blogs/", "/resource", "/new-page"],
       allow: ["/", "/llms.txt"],
     },
-    sitemap: process.env.SITE_URL + "/sitemap.xml",
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
