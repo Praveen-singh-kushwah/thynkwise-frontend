@@ -20,6 +20,7 @@ export const metadata = {
     url: process.env.SITE_URL,
     siteName: process.env.SITE_TITLE,
     images: [
+      
       {
         url: "/assets/images/seo-images/home.png",
         alt: process.env.SITE_TITLE,

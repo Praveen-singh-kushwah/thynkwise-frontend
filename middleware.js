@@ -21,7 +21,7 @@ export default function middleware(req) {
 
     return NextResponse.redirect(
       newPageUrl,
-      307
+      301
     );
   }
 
