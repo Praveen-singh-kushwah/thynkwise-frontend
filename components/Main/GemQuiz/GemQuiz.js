@@ -1,30 +1,28 @@
 "use client";
 
-import { useState } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import style from "./GemQuizForm.module.css";
 import GemQuizResult from "./GemQuizResult";
 import { uploadGemQuizPdf } from "@/lib/GemLib/GemLib";
+import { useState } from "react";
 
-const gemMap = {
-  0: "Sapphire (Fun-Loving, Outgoing)",
-  1: "Ruby (Driven, Competitive)",
-  2: "Pearl (Caring, Empathetic)",
-  3: "Emerald (Logical, Organized)",
+const gemLabels = {
+  Sapphire: "Sapphire (Fun-Loving, Outgoing)",
+  Ruby: "Ruby (Driven, Competitive)",
+  Pearl: "Pearl (Caring, Empathetic)",
+  Emerald: "Emerald (Logical, Organized)",
 };
 
-export default function GemQuiz({ quizData, userId }) {
+export default function GemQuiz({ quizData, userId, pageData = {} }) {
   const [resultText, setResultText] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  // Initialize form values
   const initialValues = quizData.reduce((acc, q) => {
     acc[q.question_id] = "";
     return acc;
   }, {});
 
-  // Validation schema
   const validationSchema = Yup.object().shape(
     quizData.reduce((acc, q) => {
       acc[q.question_id] = Yup.string().required("Please select an answer");
@@ -32,63 +30,87 @@ export default function GemQuiz({ quizData, userId }) {
     }, {})
   );
 
-  // Handle quiz submission
   const submitQuiz = async (values, { setSubmitting }) => {
     try {
-      setErrorMessage(null); // Clear previous errors
+      setErrorMessage(null);
 
-      const answerCount = [0, 0, 0, 0];
+      const answerCount = {
+        Sapphire: 0,
+        Ruby: 0,
+        Pearl: 0,
+        Emerald: 0,
+      };
+      const readableAnswers = [];
 
-      quizData.forEach((q) => {
+      quizData.forEach((q, questionIndex) => {
         const selectedAnswerId = values[q.question_id];
-        const answerIndex = q.answers.findIndex(
-          (a) => a.answer_id === selectedAnswerId
+        const selectedAnswerIndex = q.answers.findIndex(
+          (answer) => answer.answer_id === selectedAnswerId
         );
-        if (answerIndex !== -1) {
-          answerCount[answerIndex]++;
+        const selectedAnswer = q.answers[selectedAnswerIndex];
+
+        if (
+          selectedAnswer?.gemType &&
+          answerCount[selectedAnswer.gemType] !== undefined
+        ) {
+          answerCount[selectedAnswer.gemType]++;
         }
+
+        readableAnswers.push({
+          questionNumber: questionIndex + 1,
+          question: q.question,
+          selectedOption:
+            selectedAnswerIndex >= 0
+              ? String.fromCharCode(65 + selectedAnswerIndex)
+              : "",
+          selectedAnswer: selectedAnswer?.answer || "",
+          selectedGem: selectedAnswer?.gemType || "",
+          questionId: q.question_id,
+          answerId: selectedAnswerId,
+        });
       });
 
-      // Find dominant gem
-      const maxCount = Math.max(...answerCount);
+      const maxCount = Math.max(...Object.values(answerCount));
       if (maxCount === 0) {
         throw new Error("No valid answers selected.");
       }
-      const topIndex = answerCount.indexOf(maxCount);
-      const dominantGem = gemMap[topIndex];
 
-      // Prepare results
+      const topGem = Object.keys(answerCount).find(
+        (gem) => answerCount[gem] === maxCount
+      );
+      const dominantGem = gemLabels[topGem];
+
       const results = {
-        Sapphire: answerCount[0],
-        Ruby: answerCount[1],
-        Pearl: answerCount[2],
-        Emerald: answerCount[3],
+        Sapphire: answerCount.Sapphire,
+        Ruby: answerCount.Ruby,
+        Pearl: answerCount.Pearl,
+        Emerald: answerCount.Emerald,
       };
 
-      // Generate result HTML
       const resultHTML = `
         <h3 class="text-2xl font-bold mb-2 text-primary">Your Dominant GEM Personality: <u>${dominantGem}</u></h3>
         <p class="font-semibold mb-2">Breakdown of answers:</p>
         <ul class="list-group list-group-flush mb-2">
-          <li class="list-group-item">Sapphire (A): ${answerCount[0]}</li>
-          <li class="list-group-item">Ruby (B): ${answerCount[1]}</li>
-          <li class="list-group-item">Pearl (C): ${answerCount[2]}</li>
-          <li class="list-group-item">Emerald (D): ${answerCount[3]}</li>
+          <li class="list-group-item">Sapphire (A): ${answerCount.Sapphire}</li>
+          <li class="list-group-item">Ruby (B): ${answerCount.Ruby}</li>
+          <li class="list-group-item">Pearl (C): ${answerCount.Pearl}</li>
+          <li class="list-group-item">Emerald (D): ${answerCount.Emerald}</li>
         </ul>
         <p>You answered all ${quizData.length} questions.</p>
       `;
 
-      // Upload results
       const response = await uploadGemQuizPdf({
         category: dominantGem,
         results,
         user_id: userId,
+        answers: readableAnswers,
+        totalQuestions: quizData.length,
       });
 
       if (response.status) {
-        setResultText(resultHTML); // Only set resultText on success
+        setResultText(resultHTML);
       } else {
-        throw new Error(response.msg || "Failed to upload quiz results.");
+        throw new Error(response.msg || "Failed to save quiz results.");
       }
     } catch (error) {
       console.error("Error during result handling:", error);
@@ -101,22 +123,26 @@ export default function GemQuiz({ quizData, userId }) {
     }
   };
 
-  // Handle quiz retake
   const handleRetake = () => {
     setResultText(null);
     setErrorMessage(null);
   };
 
-  // Render results if successful
   if (resultText) {
-    return <GemQuizResult resultText={resultText} onRetake={handleRetake} />;
+    return (
+      <GemQuizResult
+        resultText={resultText}
+        onRetake={handleRetake}
+        pageData={pageData}
+      />
+    );
   }
 
   return (
     <div className="card shadow p-4 py-5 rounded-2">
       <div className="alert alert-info">
-        Tip: Don’t pick what sounds ideal. Choose the first answer that feels
-        true. What would you actually do — not what you think you should do?
+        {pageData.quizTip ||
+          "Tip: Don't pick what sounds ideal. Choose the first answer that feels true. What would you actually do, not what you think you should do?"}
       </div>
       <Formik
         initialValues={initialValues}
@@ -168,7 +194,9 @@ export default function GemQuiz({ quizData, userId }) {
                 className="btn btn-primary"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Processing..." : "Submit"}
+                {isSubmitting
+                  ? "Processing..."
+                  : pageData.submitButtonText || "Submit"}
               </button>
             </div>
 

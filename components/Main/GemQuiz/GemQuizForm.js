@@ -9,51 +9,35 @@ import GemQuiz from "./GemQuiz";
 import style from "./GemQuizForm.module.css";
 import { addGemQuizUser, getQuizQuestion } from "@/lib/GemLib/GemLib";
 
-const GemQuizForm = () => {
+const GemQuizForm = ({ pageData = {} }) => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [quizData, setQuizData] = useState(null);
-  const [userId, setUserId] = useState(null); // ✅ Store user ID to pass to GemQuiz
+  const [userId, setUserId] = useState(null);
 
   const handleSubmit = async (values, { resetForm, setSubmitting }) => {
     try {
       const response = await addGemQuizUser(values);
-      console.log("API response:", response);
 
-      const isAllowedToProceed =
-        response?.status || response?.msg === "User already exist!";
-
-      if (isAllowedToProceed) {
-        // ✅ Always treat as success
+      if (response?.status) {
         setSuccessMsg("Form submitted successfully! Loading quiz...");
         setErrorMsg("");
 
-        // ✅ Set user ID from response
         if (response?.data?.id) {
           setUserId(response.data.id);
         }
 
-        // ✅ Reset form only on first-time user
-        if (response?.status) {
-          resetForm();
-        }
+        resetForm();
 
-        // ✅ Always try to fetch quiz questions
-        try {
-          const quizRes = await getQuizQuestion();
-          if (quizRes?.status) {
-            setQuizData(quizRes.data);
-          } else {
-            setErrorMsg("Failed to load quiz questions.");
-            return;
-          }
-        } catch (err) {
-          setErrorMsg("Quiz loading error.");
+        const quizRes = await getQuizQuestion();
+        if (quizRes?.status && quizRes.data?.length) {
+          setQuizData(quizRes.data);
+        } else {
+          setErrorMsg("Failed to load quiz questions.");
           return;
         }
 
-        // ✅ Proceed to quiz
         setTimeout(() => {
           setIsFormSubmitted(true);
           setSuccessMsg("");
@@ -74,10 +58,16 @@ const GemQuizForm = () => {
   return (
     <div className="container py-5">
       {isFormSubmitted && quizData ? (
-        <GemQuiz quizData={quizData} userId={userId} />
+        <GemQuiz quizData={quizData} userId={userId} pageData={pageData} />
       ) : (
         <div className="col-sm-12 col-md-12 col-lg-12 p-0 pt-4 pb-5">
           <div className={style["contact_from_box"]}>
+            {pageData.introText && (
+              <p className="text-center mb-4">{pageData.introText}</p>
+            )}
+            {pageData.formHeading && (
+              <h2 className="text-center fs-3 mb-4">{pageData.formHeading}</h2>
+            )}
             <Formik
               initialValues={{
                 name: "",
@@ -93,12 +83,8 @@ const GemQuizForm = () => {
                   .email("Invalid email")
                   .required("Email is required"),
                 phone: Yup.string()
-                  .test(
-                    "isValidPhone",
-                    "Invalid phone number format",
-                    (value) => {
-                      return isValidPhoneNumber(value || ""); // Validate using react-phone-number-input
-                    }
+                  .test("isValidPhone", "Invalid phone number format", (value) =>
+                    isValidPhoneNumber(value || "")
                   )
                   .required("Phone Number is required"),
               })}
@@ -173,7 +159,9 @@ const GemQuizForm = () => {
                         className="btn btn-primary"
                         disabled={isSubmitting}
                       >
-                        {isSubmitting ? "Processing..." : "Submit"}
+                        {isSubmitting
+                          ? "Processing..."
+                          : pageData.submitButtonText || "Submit"}
                       </button>
                     </div>
                     <div className="text-center col-md-12">

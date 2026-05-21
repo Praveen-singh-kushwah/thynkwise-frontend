@@ -1,37 +1,52 @@
 import Pagebanner from "@/components/Common/Pagebanner";
 import GemQuizForm from "@/components/Main/GemQuiz/GemQuizForm";
-import { getSeoPage } from "@/lib/PageLib";
+import { getPersonalityPage } from "@/lib/GemLib/GemLib";
+
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata() {
-  const response = await getSeoPage({ slug: "personality-type" });
-  const seo = response;
+  const response = await getPersonalityPage();
+  const seo = response?.data?.seo;
+  const siteUrl = (process.env.SITE_URL || "").replace(/\/$/, "");
+
   if (!seo) return null;
+
+  const ogImageUrl = seo.ogImage?.url
+    ? `${process.env.CMS_URL}${seo.ogImage.url}`
+    : process.env.OG_IMAGE;
+
   return {
-    title: seo.title || process.env.SITE_TITLE,
-    description: seo.description || process.env.SITE_DESCRIPTION,
-    keywords: seo.keywords || process.env.SITE_KEYWORD,
+    title: seo.metaTitle || process.env.SITE_TITLE,
+    description: seo.metaDescription || process.env.SITE_DESCRIPTION,
+    keywords: seo.keywords || process.env.SITE_KEYWORDS,
     openGraph: {
-      title: seo.og_title || process.env.SITE_TITLE,
-      description: seo.og_description || process.env.SITE_DESCRIPTION,
+      title: seo.ogTitle || seo.metaTitle || process.env.SITE_TITLE,
+      description:
+        seo.ogDescription || seo.metaDescription || process.env.SITE_DESCRIPTION,
       type: "website",
-      images: [
-        {
-          url: seo.og_image || process.env.OG_IMAGE,
-          width: seo.og_image_width || process.env.OG_IMAGE_WIDTH,
-          height: seo.og_image_height || process.env.OG_IMAGE_HEIGHT,
-          alt: seo.og_title || process.env.SITE_TITLE,
-        },
-      ],
+      images: ogImageUrl
+        ? [
+            {
+              url: ogImageUrl,
+              alt: seo.ogTitle || seo.metaTitle || process.env.SITE_TITLE,
+            },
+          ]
+        : [],
     },
     alternates: {
-      canonical: process.env.SITE_URL + "/personality-type",
+      canonical: `${siteUrl}/personality-type`,
     },
   };
 }
-export default function page() {
+
+export default async function Page() {
+  const response = await getPersonalityPage();
+  const pageData = response?.data || {};
+
   return (
     <>
-      <Pagebanner title={"GEM Personality Assessment"} />
-      <GemQuizForm />
+      <Pagebanner title={pageData.pageTitle || "GEM Personality Assessment"} />
+      <GemQuizForm pageData={pageData} />
     </>
   );
 }
